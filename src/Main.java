@@ -143,6 +143,9 @@ public class Main {
                 case 9 -> {
                     result_roman = "IX";
                 }
+                case 10 -> {
+                    result_roman = "X";
+                }
             }
         }
         return result_roman;
@@ -160,7 +163,7 @@ public class Main {
                 result_roman_first = String.valueOf(ch[0]);
                 result_roman_second = String.valueOf(ch[1]);
                 roman_ten(Integer.parseInt(result_roman_second));
-                switch (result_roman_first){
+                switch (result_roman_first) {
                     case "1" -> result_roman = "X" + result_roman;
                     case "2" -> result_roman = "XX" + result_roman;
                     case "3" -> result_roman = "XXX" + result_roman;
