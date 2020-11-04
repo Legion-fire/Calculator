@@ -16,7 +16,7 @@ public class Main {
         else if (Roman.roman_flag1 || Roman.roman_flag2)
             throw new ArithmeticException("Введите корректное значение: оба числа дожны быть записаны либо только римскими, либо только арабскими цифрами");
         if (number1 > 10 || number2 > 10) throw new ArithmeticException("Одно из введенных чисел, или оба числа больше 10");
-       if (number1 < 0 || number2 < 0) throw new ArithmeticException("Одно из введенных чисел, или оба числа меньше единицы");
+       if ((number1 < 1 || number2 < 1)) throw new ArithmeticException("Одно из введенных чисел, или оба числа меньше единицы");
            if (!roman_flag) System.out.println(result);
      else Roman.roman_numerals(result); // метод романус
     }
