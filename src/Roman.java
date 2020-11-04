@@ -141,7 +141,7 @@ public class Roman {
     }
 
     static void roman_numerals (int a) {
-       result = Main.result;
+       result = ArithmeticOperations.result;
         if (roman_flag) {
             if (result <= 10) {
                 roman_ten(result);
@@ -152,9 +152,6 @@ public class Roman {
                 char[] ch = result_roman.toCharArray();
                 result_roman_first = String.valueOf(ch[0]);
                 result_roman_second = String.valueOf(ch[1]);
-                //               System.out.println(ch.length);
-                //             System.out.println(result_roman_first);
-                //           System.out.println(result_roman_second);
                 if (ch.length  == 3) {
                     result_roman_first = "10";
                 }
