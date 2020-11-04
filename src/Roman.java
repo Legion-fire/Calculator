@@ -1,6 +1,8 @@
 public class Roman {
 
     static boolean roman_flag;
+    static boolean roman_flag1 = false;
+    static boolean roman_flag2 = false;
     static int result;
     static String result_roman;
     static int number1;
@@ -12,85 +14,85 @@ public class Roman {
        switch (number_and_operation[0]) {
            case "I" -> {
                number_and_operation[0] = String.valueOf(1);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "II" -> {
                number_and_operation[0] = String.valueOf(2);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "III" -> {
                number_and_operation[0] = String.valueOf(3);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "IV" -> {
                number_and_operation[0] = String.valueOf(4);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "V" -> {
                number_and_operation[0] = String.valueOf(5);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "VI" -> {
                number_and_operation[0] = String.valueOf(6);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "VII" -> {
                number_and_operation[0] = String.valueOf(7);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "VIII" -> {
                number_and_operation[0] = String.valueOf(8);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "IX" -> {
                number_and_operation[0] = String.valueOf(9);
-               roman_flag = true;
+               roman_flag1 = true;
            }
            case "X" -> {
                number_and_operation[0] = String.valueOf(10);
-               roman_flag = true;
+               roman_flag1 = true;
            }
        }
        switch (number_and_operation[2]) {
            case "I" -> {
                number_and_operation[2] = String.valueOf(1);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "II" -> {
                number_and_operation[2] = String.valueOf(2);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "III" -> {
                number_and_operation[2] = String.valueOf(3);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "IV" -> {
                number_and_operation[2] = String.valueOf(4);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "V" -> {
                number_and_operation[2] = String.valueOf(5);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "VI" -> {
                number_and_operation[2] = String.valueOf(6);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "VII" -> {
                number_and_operation[2] = String.valueOf(7);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "VIII" -> {
                number_and_operation[2] = String.valueOf(8);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "IX" -> {
                number_and_operation[2] = String.valueOf(9);
-               roman_flag = true;
+               roman_flag2 = true;
            }
            case "X" -> {
                number_and_operation[2] = String.valueOf(10);
-               roman_flag = true;
+               roman_flag2 = true;
            }
        }
         number1 = Integer.parseInt(number_and_operation[0]);
@@ -100,6 +102,7 @@ public class Roman {
    }
 
     public static String roman_ten (int a) {
+       if (roman_flag1 && roman_flag2) roman_flag = true;
         if (roman_flag) {
             switch (a) {
                 case 0 -> {
@@ -141,7 +144,8 @@ public class Roman {
     }
 
     static void roman_numerals (int a) {
-       result = ArithmeticOperations.result;
+        if (roman_flag1 && roman_flag2) roman_flag = true;
+        result = ArithmeticOperations.result;
         if (roman_flag) {
             if (result <= 10) {
                 roman_ten(result);
