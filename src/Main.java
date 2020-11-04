@@ -162,6 +162,12 @@ public class Main {
                 char[] ch = result_roman.toCharArray();
                 result_roman_first = String.valueOf(ch[0]);
                 result_roman_second = String.valueOf(ch[1]);
+ //               System.out.println(ch.length);
+   //             System.out.println(result_roman_first);
+     //           System.out.println(result_roman_second);
+                if (ch.length  == 3) {
+                    result_roman_first = "10";
+                }
                 roman_ten(Integer.parseInt(result_roman_second));
                 switch (result_roman_first) {
                     case "1" -> result_roman = "X" + result_roman;
@@ -173,6 +179,7 @@ public class Main {
                     case "7" -> result_roman = "LXX" + result_roman;
                     case "8" -> result_roman = "LXXX" + result_roman;
                     case "9" -> result_roman = "XC" + result_roman;
+                    case "10" -> result_roman = "C";
                 }
 
             }
