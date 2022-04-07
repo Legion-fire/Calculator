@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Roman {
 
     static boolean roman_flag;
@@ -9,8 +11,20 @@ public class Roman {
     static int number2;
     static String arithmetic_operation;
 
-   public static String [] setNumber_and_operation(String  str ) {
+   public static String [] setNumber_and_operation(String  str ) throws ArithmeticException {
        String[] number_and_operation = str.split(" ");
+       if (number_and_operation.length == 1) throw new ArithmeticException("строка не является математической операцией");
+       int[] count = new int[4];
+       for (String operand: number_and_operation) {
+    //       if (operand.equals("+")) count++;
+           switch (operand) {
+               case "+" : count[0]++;
+               case "-" : count[1]++;
+               case "/" : count[2]++;
+               case "*" : count[3]++;
+           }
+       }
+       if (count[0] > 1 || count[1] > 1 || count[2] > 1 | count[3] > 1) throw new ArithmeticException("Введено более двух операндов");
        switch (number_and_operation[0]) {
            case "I" -> {
                number_and_operation[0] = String.valueOf(1);
@@ -95,9 +109,9 @@ public class Roman {
                roman_flag2 = true;
            }
        }
-        number1 = Integer.parseInt(number_and_operation[0]);
-        number2 = Integer.parseInt(number_and_operation[2]);
-        arithmetic_operation = number_and_operation[1];
+       number1 = Integer.parseInt(number_and_operation[0]);
+       number2 = Integer.parseInt(number_and_operation[2]);
+       arithmetic_operation = number_and_operation[1];
        return number_and_operation;
    }
 
@@ -140,6 +154,7 @@ public class Roman {
                 }
             }
         }
+        if (result_roman.equals("")) throw new ArithmeticException("Римское число не может быть нулем!");
         return result_roman;
     }
 
@@ -148,6 +163,7 @@ public class Roman {
         result = ArithmeticOperations.result;
         if (roman_flag) {
             if (result <= 10) {
+                if (result < 0 ) throw new ArithmeticException("В римской системе нет отрицательных чисел!");
                 roman_ten(result);
             } else {
                 result_roman = String.valueOf(result);
